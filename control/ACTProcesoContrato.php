@@ -18,8 +18,8 @@ class ACTProcesoContrato extends ACTbase{
 		
 		
 		if($this->objParam->getParametro('tipoReporte')=='excel_grid' || $this->objParam->getParametro('tipoReporte')=='pdf_grid'){
-			$this->objReporte = new Reporte($this->objParam);
-			$this->res = $this->objReporte->generarReporteListado('FuncionesLegal','listarProcesoContrato');
+			$this->objReporte = new Reporte($this->objParam,$this);
+			$this->res = $this->objReporte->generarReporteListado('MODProcesoContrato','listarProcesoContrato');
 		} else{
 			$this->objFunc=$this->create('MODProcesoContrato');
 			$this->res=$this->objFunc->listarProcesoContrato($this->objParam);
